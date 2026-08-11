@@ -1,0 +1,36 @@
+{
+  "title": "The Last Transmission",
+  "ratio": "1280:720",
+  "look": "warm anamorphic film grade, teal shadows, soft halation on highlights",
+  "characters": {
+    "aria": {
+      "description": "Aria, a weathered deep-space engineer in her 40s, short silver hair, a scar across her left brow, wearing a patched orange EVA suit."
+    },
+    "kade": {
+      "description": "Kade, a lanky young comms officer with dark curls and anxious eyes, in a grey station jumpsuit."
+    }
+  },
+  "shots": [
+    {
+      "id": "s1",
+      "prompt": "@aria stands at a flickering control panel in a derelict space station corridor, emergency lights pulsing red",
+      "characters": ["aria"],
+      "duration": 5,
+      "motion": "slow push in on Aria's face as she realizes the reactor is failing"
+    },
+    {
+      "id": "s2",
+      "prompt": "@kade hunches over a comms console, static on the screens, reaching for a transmit switch",
+      "characters": ["kade"],
+      "duration": 5,
+      "motion": "handheld drift, Kade's hand trembling toward the switch"
+    },
+    {
+      "id": "s3",
+      "prompt": "@aria and @kade brace against a bulkhead as the corridor shudders, debris drifting past in zero-g",
+      "characters": ["aria", "kade"],
+      "duration": 6,
+      "motion": "the station lurches; both characters thrown against the wall, sparks arcing"
+    }
+  ]
+}

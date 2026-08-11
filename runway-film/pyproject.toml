@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "runway-film"
+version = "0.1.0"
+description = "Storyboard-to-film pipeline built on runway-gateway."
+readme = "README.md"
+requires-python = ">=3.11"
+# Only runway-gateway (which brings runwayml). No other runtime deps; ffmpeg is an
+# external tool, invoked via subprocess, not a Python dependency.
+dependencies = ["runway-gateway"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.11"]
+
+[project.scripts]
+runway-film = "runway_film.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/runway_film"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
