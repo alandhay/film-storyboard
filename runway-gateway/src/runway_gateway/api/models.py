@@ -39,7 +39,7 @@ class TaskHandle:
 
 @dataclass(frozen=True)
 class TaskResult:
-    """A polled task snapshot, normalized across the SDK's status union."""
+    """A polled task state, normalized across the SDK's status union."""
 
     task_id: str
     status: TaskState

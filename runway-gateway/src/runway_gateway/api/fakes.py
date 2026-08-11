@@ -93,13 +93,15 @@ class FakeRunwayClient:
         *,
         default_behavior: Behavior = Behavior.SUCCEED,
         behavior_selector: BehaviorSelector | None = None,
-        output: tuple[str, ...] = ("https://fake.runway/output-0.mp4",),
+        output: tuple[str, ...] | None = None,
         running_polls: int = 0,
         transient_creates: int = 0,
     ) -> None:
         self._default_behavior = default_behavior
         self._behavior_selector = behavior_selector
-        self._output = list(output)
+        # None => generate a distinct URL per task (realistic; lets callers tell
+        # stages apart). A provided tuple is returned verbatim for every task.
+        self._output = list(output) if output is not None else None
         self._running_polls = running_polls
         self._transient_creates = transient_creates
 
@@ -157,7 +159,10 @@ class FakeRunwayClient:
         if record.polls <= self._running_polls:
             return _FakeTask(id=task_id, status="RUNNING", progress=0.5)
         if record.behavior is Behavior.SUCCEED:
-            return _FakeTask(id=task_id, status="SUCCEEDED", output=list(self._output))
+            output = list(self._output) if self._output is not None else [
+                f"https://fake.runway/{task_id}.out"
+            ]
+            return _FakeTask(id=task_id, status="SUCCEEDED", output=output)
         if record.behavior is Behavior.CANCELLED:
             return _FakeTask(id=task_id, status="CANCELLED")
         code = _FAILURE_CODES[record.behavior]

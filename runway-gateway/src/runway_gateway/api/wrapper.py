@@ -123,7 +123,7 @@ class RunwayAPI:
     # --- polling ----------------------------------------------------------------
 
     def retrieve(self, task_id: str) -> TaskResult:
-        """One poll of ``tasks.retrieve`` -> normalized snapshot."""
+        """One poll of ``tasks.retrieve`` -> normalized state."""
         raw = self._client.tasks.retrieve(task_id)
         return TaskResult.from_task(raw)
 

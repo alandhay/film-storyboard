@@ -23,7 +23,7 @@ GENERATION_ENDPOINTS: Final[frozenset[str]] = frozenset(
 )
 
 #: Hosted, higher-level ``client.recipes.<name>(**params)`` methods. Black boxes
-#: (no approval gate); exposed for pass-through, not used by the film pipeline.
+#: exposed for pass-through; the gateway never depends on any specific pipeline.
 RECIPE_ENDPOINTS: Final[frozenset[str]] = frozenset(
     {
         "ad_localization",
