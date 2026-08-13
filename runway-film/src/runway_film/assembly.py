@@ -36,7 +36,9 @@ def assemble(clip_paths: Sequence[str], *, out_path: str | Path) -> LocalVideo:
         "w", suffix=".txt", delete=False, encoding="utf-8"
     ) as manifest:
         for path in clip_paths:
-            manifest.write(f"file '{Path(path).as_posix()}'\n")
+            # Absolute path: the concat demuxer resolves relative entries against
+            # the manifest's own directory (a temp dir here), not the cwd.
+            manifest.write(f"file '{Path(path).resolve().as_posix()}'\n")
         manifest_path = manifest.name
     try:
         subprocess.run(
