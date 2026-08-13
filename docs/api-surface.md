@@ -350,15 +350,23 @@ is images, seconds, or characters. Video dominates (an 8s veo3.1 clip = 320 cred
 = $3.20; a gen4_image keyframe = 5 credits = $0.05) — which is exactly why the
 approval gate gating video behind cheap stills is the headline cost control.
 `aleph2` (video_to_video / grade) per-second price was **not found on the pricing
-page** — see Unverified.
+page**, but is now known empirically: **~27 credits/second of output** (measured —
+a 29.9s grade at 1080p output billed 812 credits, 812/29.9 ≈ 27.1). Caveat: single
+sample; the rate may vary with output resolution (this pass upscaled 720p→1080p).
+Note this cost cannot be estimated from params alone — `video_to_video` takes no
+`duration`; the billed length is a property of the input `video_uri` asset — so the
+default `PricingBook` keeps `aleph2` fail-closed and a caller who knows the cut
+length registers an override: `book.register("aleph2", lambda p: (27.0 * secs, ...))`.
 
 ---
 
 ## Unverified — honest gaps (do not fill these by analogy)
 
-1. **`aleph2` (video_to_video) credit cost.** Not on the pricing page I read.
-   Grade-stage cost estimate is a hole. Need to confirm before trusting a budget
-   number for the grade pass.
+1. **`aleph2` (video_to_video) credit cost.** ~~Not on the pricing page.~~
+   RESOLVED empirically: **~27 credits/second of output** (812 cr for a 29.9s 1080p
+   grade). Single sample; may vary with output resolution. Still can't be estimated
+   pre-call from params (no `duration` param — length comes from the input asset), so
+   the budget stays fail-closed on it unless the caller registers an override.
 2. **`.wait_for_task_output()` signature** — poll interval, timeout, and whether
    it raises vs returns on failure are not verified from the stub. Mitigated: the
    gateway owns its own poll loop over `tasks.retrieve`, so this only affects the
