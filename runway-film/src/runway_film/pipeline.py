@@ -49,12 +49,13 @@ def generate_keyframes(
         params: dict[str, Any] = {
             "model": shot.keyframe_model,
             "prompt_text": shot.prompt,
-            "ratio": sb.ratio,
+            "ratio": shot.keyframe_ratio or sb.ratio,
         }
         if refs:
             params["reference_images"] = [
                 {"uri": bible[tag], "tag": tag} for tag in shot.character_tags
             ]
+        params.update(shot.keyframe_extra)  # model-specific extras (e.g. output_count)
         gen = gw.generate("text_to_image", depends_on=refs, kind="image", **params)
         keyframes.append(Keyframe(shot_id=shot.id, ref=gen.ref))
     return keyframes

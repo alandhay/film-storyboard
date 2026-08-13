@@ -11,7 +11,7 @@ from __future__ import annotations
 import json
 import re
 from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -41,6 +41,12 @@ class Shot:
     motion: str | None = None
     keyframe_model: str = "gen4_image"
     clip_model: str = "gen4_turbo"
+    # Per-shot keyframe overrides. A shot with >3 characters needs a many-reference
+    # model (e.g. gemini_image3_pro, 14 refs) which uses a different ratio and may
+    # require extra params (e.g. output_count). These keep the pipeline generic:
+    # the storyboard declares the override, no model-name special-casing in code.
+    keyframe_ratio: str | None = None
+    keyframe_extra: Mapping[str, Any] = field(default_factory=dict)
 
     @property
     def clip_prompt(self) -> str:
@@ -136,6 +142,13 @@ def _parse_shots(raw: Any, characters: Mapping[str, Character]) -> tuple[Shot, .
         if motion is not None and not isinstance(motion, str):
             raise StoryboardError(f"shot {shot_id!r} 'motion' must be a string")
 
+        keyframe_ratio = body.get("keyframe_ratio")
+        if keyframe_ratio is not None and not isinstance(keyframe_ratio, str):
+            raise StoryboardError(f"shot {shot_id!r} 'keyframe_ratio' must be a string")
+        keyframe_extra = body.get("keyframe_extra", {})
+        if not isinstance(keyframe_extra, Mapping):
+            raise StoryboardError(f"shot {shot_id!r} 'keyframe_extra' must be an object")
+
         # Every declared tag AND every @mention in the prompt must be defined.
         for tag in character_tags:
             if tag not in characters:
@@ -156,6 +169,8 @@ def _parse_shots(raw: Any, characters: Mapping[str, Character]) -> tuple[Shot, .
             motion=motion,
             keyframe_model=str(body.get("keyframe_model", "gen4_image")),
             clip_model=str(body.get("clip_model", "gen4_turbo")),
+            keyframe_ratio=keyframe_ratio,
+            keyframe_extra=dict(keyframe_extra),
         )
         shots.append(shot)
     return tuple(shots)
