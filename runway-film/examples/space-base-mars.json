@@ -1,0 +1,69 @@
+{
+  "title": "Space Base Mars — Opening Titles",
+  "ratio": "1280:720",
+  "look": "warm retro-sitcom film grade, gently saturated 1990s broadcast television look, soft key lighting, subtle film grain, cheerful",
+  "characters": {
+    "dana": {
+      "description": "Commander Dana Vosh, a weary woman in her late 50s with a neat silver bob and tired eyes, wearing a slightly-too-tight navy colony command uniform with a mission patch, standing in a cramped command office, warm sitcom studio lighting, photorealistic character portrait"
+    },
+    "krill": {
+      "description": "Doctor Favius Krill, chief science officer in his 40s with wild frizzy grey hair and safety goggles pushed up on his forehead, wearing a scorched white lab coat, manic delighted grin, holding a smoking beaker, bright science lab, photorealistic character portrait"
+    },
+    "bex": {
+      "description": "Bex Okafor, a station engineer in her 30s with braided hair and a deadpan expression, wearing a grease-streaked orange jumpsuit and a heavy tool belt with a roll of duct tape, arms crossed, industrial airlock behind her, photorealistic character portrait"
+    },
+    "hollis": {
+      "description": "Hollis Pemberton, a gangly geologist with thick glasses and an earnest delighted smile, wearing a knitted cardigan under a hi-vis vest, gently cradling a red Mars rock like a baby, shelves of labelled rock samples behind, photorealistic character portrait"
+    },
+    "zane": {
+      "description": "Zane Cruz, a vain comms and content officer in his 20s with styled hair and a bright influencer smile, wearing a sleek EVA suit with a small ring-light rig clipped to the chest, striking a selfie pose, photorealistic character portrait"
+    },
+    "arlo": {
+      "description": "ARLO, an obsolete boxy retro-futurist maintenance android with a single flickering amber eye and a faded corporate logo on its chest panel, holding a mop, slightly hunched passive-aggressive posture, dim station corridor, photorealistic character"
+    }
+  },
+  "shots": [
+    {
+      "id": "title_dana",
+      "prompt": "@dana sits at a cluttered command desk stacked with unread reports and a dead potted plant, giving a weary salute to camera, warm sitcom lighting",
+      "characters": ["dana"],
+      "duration": 5,
+      "motion": "Dana leans back in her chair with a tired sigh and the dead plant slowly tips over off the desk"
+    },
+    {
+      "id": "title_krill",
+      "prompt": "@krill grins with delight in a bright science lab as a beaker erupts in green smoke in front of him",
+      "characters": ["krill"],
+      "duration": 5,
+      "motion": "the beaker overflows with green foam and Krill throws his arms up laughing as smoke fills the frame"
+    },
+    {
+      "id": "title_bex",
+      "prompt": "@bex stands deadpan in an industrial corridor duct-taping a sparking wall panel",
+      "characters": ["bex"],
+      "duration": 5,
+      "motion": "the panel showers sparks across her face and she doesn't flinch, calmly smoothing down another strip of duct tape"
+    },
+    {
+      "id": "title_hollis",
+      "prompt": "@hollis stands in an office lined with labelled rock samples, hugging a glowing red Mars rock to his chest with a joyful smile",
+      "characters": ["hollis"],
+      "duration": 5,
+      "motion": "Hollis spins around happily cradling the rock and beams at the camera"
+    },
+    {
+      "id": "title_zane",
+      "prompt": "@zane in a sleek EVA suit takes a selfie on the red Martian surface with a vast crater vista behind him",
+      "characters": ["zane"],
+      "duration": 5,
+      "motion": "Zane strikes a pose and gives a thumbs up to the camera, then stumbles backward over a rock"
+    },
+    {
+      "id": "title_arlo",
+      "prompt": "@arlo the obsolete android mops the floor of a dim station corridor, its single amber eye flickering",
+      "characters": ["arlo"],
+      "duration": 5,
+      "motion": "slow push in as Arlo's eye sparks, it pauses mopping and turns its head to the camera with a weary electronic sigh"
+    }
+  ]
+}
