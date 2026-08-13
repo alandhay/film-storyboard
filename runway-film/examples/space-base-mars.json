@@ -27,7 +27,7 @@
       "id": "lab",
       "prompt": "@krill grins as a beaker erupts in green smoke in a cramped science lab, @bex stands beside him deadpan holding a roll of duct tape, @zane leans into frame filming the chaos on a glowing phone rig",
       "characters": ["krill", "bex", "zane"],
-      "duration": 6,
+      "duration": 5,
       "motion": "the beaker overflows with green foam, Krill throws his arms up laughing, Bex calmly steps back unimpressed, Zane pushes in closer for the shot",
       "keyframe_extra": { "content_moderation": { "public_figure_threshold": "low" } }
     },
@@ -35,7 +35,7 @@
       "id": "office",
       "prompt": "@dana slumps at a cluttered command desk rubbing her temples over a stack of unread reports, while @arlo the android solemnly waters a completely dead brown potted plant beside her",
       "characters": ["dana", "arlo"],
-      "duration": 6,
+      "duration": 5,
       "motion": "Dana drops her forehead onto the desk in despair, Arlo tips the watering can over the dead plant and its amber eye flickers",
       "keyframe_extra": { "content_moderation": { "public_figure_threshold": "low" } }
     },
@@ -43,7 +43,7 @@
       "id": "geology",
       "prompt": "@hollis proudly holds up a glowing red Mars rock in an office lined with labelled rock samples, @dana forces a polite smile beside him, @krill eyes the rock hungrily",
       "characters": ["hollis", "dana", "krill"],
-      "duration": 6,
+      "duration": 5,
       "motion": "Hollis presents the rock beaming, Dana claps politely without enthusiasm, Krill reaches for the rock and Hollis twists away to protect it",
       "keyframe_extra": { "content_moderation": { "public_figure_threshold": "low" } }
     },
@@ -51,7 +51,7 @@
       "id": "surface",
       "prompt": "three astronauts on the red Martian surface under a dusty pink sky, @zane strikes a selfie pose in his sleek EVA suit, @bex facepalms in her orange suit, @hollis crouches over a rock ignoring them both",
       "characters": ["zane", "bex", "hollis"],
-      "duration": 6,
+      "duration": 5,
       "motion": "Zane poses and gives a thumbs up then stumbles backward over a rock, Bex shakes her head slowly, Hollis keeps happily inspecting the ground",
       "keyframe_extra": { "content_moderation": { "public_figure_threshold": "low" } }
     },
@@ -59,7 +59,7 @@
       "id": "control_room_finale",
       "prompt": "all six crew of Space Base Mars assembled together in a heroic team pose in the main control room full of glowing monitors: @dana stands center with arms crossed, @krill grins holding a smoking beaker, @bex leans on a console, @hollis cradles his red rock, @zane takes a group selfie, @arlo the android stands stiffly at the edge, warm sitcom lighting, wide ensemble group shot",
       "characters": ["dana", "krill", "bex", "hollis", "zane", "arlo"],
-      "duration": 6,
+      "duration": 10,
       "motion": "the crew hold their heroic pose as the camera slowly pushes in, Zane's selfie flash pops, Arlo gives a stiff little wave",
       "keyframe_model": "gemini_image3_pro",
       "keyframe_ratio": "1344:768",
