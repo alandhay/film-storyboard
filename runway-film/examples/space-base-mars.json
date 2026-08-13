@@ -4,22 +4,22 @@
   "look": "warm retro-sitcom film grade, gently saturated 1990s broadcast television look, soft key lighting, subtle film grain, cheerful",
   "characters": {
     "dana": {
-      "description": "Commander Dana Vosh, a weary woman in her late 50s with a neat silver bob and tired eyes, wearing a slightly-too-tight navy colony command uniform with a mission patch, warm sitcom studio lighting, photorealistic character portrait"
+      "description": "Commander Dana Vosh, a weary woman in her late 50s with a neat silver bob and tired eyes, wearing a slightly-too-tight navy colony command uniform with a mission patch, standing in a cramped command office, warm sitcom studio lighting, photorealistic character portrait"
     },
     "krill": {
-      "description": "Doctor Favius Krill, chief science officer in his 40s with wild frizzy grey hair and safety goggles pushed up on his forehead, wearing a scorched white lab coat, manic delighted grin, photorealistic character portrait"
+      "description": "Doctor Favius Krill, chief science officer in his 40s with wild frizzy grey hair and safety goggles pushed up on his forehead, wearing a scorched white lab coat, manic delighted grin, holding a smoking beaker, bright science lab, photorealistic character portrait"
     },
     "bex": {
-      "description": "Bex Okafor, a station engineer in her 30s with braided hair and a deadpan expression, wearing a grease-streaked orange jumpsuit and a heavy tool belt with a roll of duct tape, arms crossed, photorealistic character portrait"
+      "description": "Bex Okafor, a station engineer in her 30s with braided hair and a deadpan expression, wearing a grease-streaked orange jumpsuit and a heavy tool belt with a roll of duct tape, arms crossed, industrial airlock behind her, photorealistic character portrait"
     },
     "hollis": {
-      "description": "Hollis Pemberton, a gangly geologist with thick glasses and an earnest delighted smile, wearing a knitted cardigan under a hi-vis vest, gently cradling a red Mars rock, photorealistic character portrait"
+      "description": "Hollis Pemberton, a gangly geologist with thick glasses and an earnest delighted smile, wearing a knitted cardigan under a hi-vis vest, gently cradling a red Mars rock like a baby, shelves of labelled rock samples behind, photorealistic character portrait"
     },
     "zane": {
-      "description": "Zane Cruz, a vain comms and content officer in his 20s with styled hair and a bright influencer smile, wearing a sleek EVA suit with a small ring-light rig clipped to the chest, photorealistic character portrait"
+      "description": "Zane Cruz, a vain comms and content officer in his 20s with styled hair and a bright influencer smile, wearing a sleek EVA suit with a small ring-light rig clipped to the chest, striking a selfie pose, photorealistic character portrait"
     },
     "arlo": {
-      "description": "ARLO, an obsolete boxy retro-futurist maintenance android with a single flickering amber eye and a faded corporate logo on its chest panel, slightly hunched passive-aggressive posture, photorealistic character"
+      "description": "ARLO, an obsolete boxy retro-futurist maintenance android with a single flickering amber eye and a faded corporate logo on its chest panel, holding a mop, slightly hunched passive-aggressive posture, dim station corridor, photorealistic character"
     }
   },
   "shots": [
@@ -28,28 +28,32 @@
       "prompt": "@krill grins as a beaker erupts in green smoke in a cramped science lab, @bex stands beside him deadpan holding a roll of duct tape, @zane leans into frame filming the chaos on a glowing phone rig",
       "characters": ["krill", "bex", "zane"],
       "duration": 6,
-      "motion": "the beaker overflows with green foam, Krill throws his arms up laughing, Bex calmly steps back unimpressed, Zane pushes in closer for the shot"
+      "motion": "the beaker overflows with green foam, Krill throws his arms up laughing, Bex calmly steps back unimpressed, Zane pushes in closer for the shot",
+      "keyframe_extra": { "content_moderation": { "public_figure_threshold": "low" } }
     },
     {
       "id": "office",
       "prompt": "@dana slumps at a cluttered command desk rubbing her temples over a stack of unread reports, while @arlo the android solemnly waters a completely dead brown potted plant beside her",
       "characters": ["dana", "arlo"],
       "duration": 6,
-      "motion": "Dana drops her forehead onto the desk in despair, Arlo tips the watering can over the dead plant and its amber eye flickers"
+      "motion": "Dana drops her forehead onto the desk in despair, Arlo tips the watering can over the dead plant and its amber eye flickers",
+      "keyframe_extra": { "content_moderation": { "public_figure_threshold": "low" } }
     },
     {
       "id": "geology",
       "prompt": "@hollis proudly holds up a glowing red Mars rock in an office lined with labelled rock samples, @dana forces a polite smile beside him, @krill eyes the rock hungrily",
       "characters": ["hollis", "dana", "krill"],
       "duration": 6,
-      "motion": "Hollis presents the rock beaming, Dana claps politely without enthusiasm, Krill reaches for the rock and Hollis twists away to protect it"
+      "motion": "Hollis presents the rock beaming, Dana claps politely without enthusiasm, Krill reaches for the rock and Hollis twists away to protect it",
+      "keyframe_extra": { "content_moderation": { "public_figure_threshold": "low" } }
     },
     {
       "id": "surface",
       "prompt": "three astronauts on the red Martian surface under a dusty pink sky, @zane strikes a selfie pose in his sleek EVA suit, @bex facepalms in her orange suit, @hollis crouches over a rock ignoring them both",
       "characters": ["zane", "bex", "hollis"],
       "duration": 6,
-      "motion": "Zane poses and gives a thumbs up then stumbles backward over a rock, Bex shakes her head slowly, Hollis keeps happily inspecting the ground"
+      "motion": "Zane poses and gives a thumbs up then stumbles backward over a rock, Bex shakes her head slowly, Hollis keeps happily inspecting the ground",
+      "keyframe_extra": { "content_moderation": { "public_figure_threshold": "low" } }
     },
     {
       "id": "control_room_finale",
